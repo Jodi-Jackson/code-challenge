@@ -1,0 +1,27 @@
+.answer-container{
+    display: flex;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    font-size: 1.8rem;
+    border: 0.1rem solid rgb (86,165,235, 0.25);
+    background-color: white;
+    align-items: center;
+}
+.answer-container:hover{
+    cursor: pointer;
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+    box-shadow: 0 0.2rem 0.5rem 0 rgb(238, 20, 209);
+}
+.answer-prefix {
+    padding: 1.5rem 2.5rem; 
+    background: #db9cf8;
+    color: white;
+    margin: 0;
+    align-items: center;
+    
+}
+.answer-text {
+    padding: 1.5rem;
+    align-items: center;
+}
