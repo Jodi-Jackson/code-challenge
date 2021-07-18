@@ -1,0 +1,116 @@
+/* begin root*/
+:root{ 
+    background-color: rgb(207, 227, 240);
+    font-size: 62.5%;
+    
+}
+/* end root*/
+
+/* begin * */
+*{
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4 {
+    margin-bottom: 1rem;
+}
+h1{
+    font-size: 5.4rem;
+    color: mediumslateblue;
+    margin-bottom: 5rem; 
+}
+h2{
+    font-size: 4.3rem;
+    margin-bottom: 4rem;
+    font-weight: 700;
+}
+h3{ font-size: 2.8 rem;
+font-weight: 500;
+}
+h1 >span{
+    font-size: 2.4rem;
+    font-weight: 500;
+}
+/* end * */
+
+/* begin buttons*/
+.button {
+    font-size: 1.8rem;
+    padding: 1rem;
+    width: 20rem;
+    text-align: center;
+    border: 0.1rem solid rgb(50, 158, 50);
+    text-decoration: none;
+    color: rgb(50, 158, 50);
+    background-color: white;
+    margin-bottom: 1rem;
+   
+}
+
+.button:hover{
+    cursor: pointer;
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+    box-shadow: 0 0.2rem 0.5rem 0 rgb(50, 158, 50);
+
+}
+
+.button[disabled]:hover {
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+/* end buttons*/
+
+p{
+    font-size: 1.8rem;
+    margin-bottom: 4rem;
+    font-weight: 700;
+    color: blue;
+}
+
+/*begin utility styling*/
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80rem;
+    margin: 0 auto;
+
+
+}
+.container > * {
+    width: 100%;
+}
+
+.flex-column { 
+    display: flex;
+    flex-direction: column;
+
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+/*end utility styling*/
+
+
