@@ -24,4 +24,13 @@
 .answer-text {
     padding: 1.5rem;
     align-items: center;
+    width: 100%;
+}
+
+.correct {
+    background-color: green;
+}
+
+.incorrect{
+    background-color: red;
 }

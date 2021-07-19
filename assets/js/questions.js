@@ -183,6 +183,9 @@ startGame = () => {
 };
 
 getNewQuestion = () => {
+    if(availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+      return window.location.assign("/scores.html.")  
+    }
    questionCounter++;
    const questionTable =  Math.floor(Math.random() * availableQuestions.length);
    currentQuestion = availableQuestions[questionTable] ;
@@ -197,14 +200,25 @@ getNewQuestion = () => {
    acceptingAnswers = true;
 
 };
-choices.forEach((choice) => {
-    choice.addEventListener ('click', (e) => {
+choices.forEach(choice => {
+    choice.addEventListener ("click", e => {
         if (!acceptingAnswers) return;
 
         acceptingAnswers = false;
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset['number'];
-        getNewQuestion();
+
+//animation for correct vs. incorrect answer
+        const classToApply = 
+        selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
+        
+       selectedChoice.parentElement.classList.add(classToApply);
+        //remove class
+            setTimeout( () =>{
+         selectedChoice.parentElement.classList.remove(classToApply);
+         getNewQuestion();
+        }, 1000)
+       
     });
 });
 
