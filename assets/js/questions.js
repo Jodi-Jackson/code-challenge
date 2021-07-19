@@ -1,9 +1,11 @@
 const question = document.getElementById ("question");
 const choices = Array.from(document.getElementsByClassName ("answer-text"));
+const scoreText = document.getElementById("score");
+
 let currentQuestion = {}
-let acceptingAnswers = true;
+let acceptingAnswers = false;
 let score = 0;
-let questionCounter = 0;
+
 //create questions
 let availableQuestions = [
     {
@@ -184,8 +186,9 @@ startGame = () => {
 
 getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
-      return window.location.assign("/scores.html.")  
+      return window.location.assign("scores.html")  
     }
+
    questionCounter++;
    const questionTable =  Math.floor(Math.random() * availableQuestions.length);
    currentQuestion = availableQuestions[questionTable] ;
@@ -200,6 +203,7 @@ getNewQuestion = () => {
    acceptingAnswers = true;
 
 };
+
 choices.forEach(choice => {
     choice.addEventListener ("click", e => {
         if (!acceptingAnswers) return;
@@ -211,7 +215,11 @@ choices.forEach(choice => {
 //animation for correct vs. incorrect answer
         const classToApply = 
         selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
-        
+
+        if (classToApply === "correct") { incrementScore(CORRECT_BONUS);
+        }
+
+                
        selectedChoice.parentElement.classList.add(classToApply);
         //remove class
             setTimeout( () =>{
@@ -221,6 +229,11 @@ choices.forEach(choice => {
        
     });
 });
+
+incrementScore = num => {
+    score += num;
+    scoreText.innerText = score;
+};
 
 
 startGame();
