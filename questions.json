@@ -19,10 +19,10 @@
     },
     {
         "question": "Where is the JavaScript placed inside and HTML document or page?",
-        "choice1": "In the <body> and <head> sections.",
-        "choice2": "In the <meta> section.",
-        "choice3": "In the <footer> section.",
-        "choice4": "In the <title> section.",
+        "choice1": "In the body and head sections.",
+        "choice2": "In the meta section.",
+        "choice3": "In the footer section.",
+        "choice4": "In the title section.",
         "answer": 1
 
     },

@@ -6,6 +6,44 @@ let currentQuestion = {}
 let acceptingAnswers = false;
 let score = 0;
 
+let availableQuesions = [];
+
+let questions = [];
+
+fetch(
+    'https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple'
+)
+    .then((res) => {
+        return res.json();
+    })
+    .then((loadedQuestions) => {
+        questions = loadedQuestions.results.map((loadedQuestion) => {
+            const formattedQuestion = {
+                question: loadedQuestion.question,
+            };
+
+            const answerChoices = [...loadedQuestion.incorrect_answers];
+            formattedQuestion.answer = Math.floor(Math.random() * 4) + 1;
+            answerChoices.splice(
+                formattedQuestion.answer - 1,
+                0,
+                loadedQuestion.correct_answer
+            );
+
+            answerChoices.forEach((choice, index) => {
+                formattedQuestion['choice' + (index + 1)] = choice;
+            });
+
+            return formattedQuestion;
+        });
+
+        startGame();
+    })
+    .catch((err) => {
+        console.error(err);
+    });
+
+
 //create questions
 let availableQuestions = [
     {
@@ -119,10 +157,10 @@ startGame = () => {
         },
         {
             question: "Where is the JavaScript placed inside and HTML document or page?",
-            choice1: "In the <body> and <head> sections.",
-            choice2: "In the <meta> section.",
-            choice3: "In the <footer> section.",
-            choice4: "In the <title> section.",
+            choice1: "In the body and head sections.",
+            choice2: "In the meta section.",
+            choice3: "In the footer section.",
+            choice4: "In the title section.",
             answer: 1
     
         },
@@ -186,17 +224,18 @@ startGame = () => {
 
 getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
-      return window.location.assign("scores.html")  
+        localStorage.setItem('mostRecentScore', score);
+        return window.location.assign('scores.html'); 
     }
 
    questionCounter++;
    const questionTable =  Math.floor(Math.random() * availableQuestions.length);
    currentQuestion = availableQuestions[questionTable] ;
-   question.innerText = currentQuestion.question; 
+   question.innerHTML = currentQuestion.question; 
 
    choices.forEach ( (choice) => {
        const number = choice.dataset ['number']
-       choice.innerText = currentQuestion['choice' + number]
+       choice.innerHTML = currentQuestion['choice' + number]
    });
 
    availableQuestions.splice (questionTable, 1);

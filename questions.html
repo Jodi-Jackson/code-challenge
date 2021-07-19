@@ -11,23 +11,26 @@
 </head>
 
 <nav>
+<p class="title">
+    Score
+</p>
+<h1 class="score-text" id="score">
+    0
+</h1>
+<!-- Timer -->
+
+<div id="currentTime"></div>
 
 </nav>
 
 <body>
     <div class="container">
         <div id="questions" class="justify-center flex-column">
-            <div id="scores">
-              <div id="score-item">
-                <p class="score-prefix">
-                  Score
-                </p>
-                <h1 class="score-main-text" id="score">
-                  0
-                </h1>
-              </div>
+            <div id="scores" class="scores">
+                <div id="score-item">
+                </div>
             </div>
-        
+
             <h2 id=question>Here are my questions</h2>
             <div class="answer-container">
                 <p class="answer-prefix">A</p>
@@ -47,6 +50,7 @@
             </div>
         </div>
     </div>
-<script src="assets\js\questions.js"></script>
+    <script src="assets\js\questions.js"></script>
 </body>
+
 </html>

@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         <div id="scores" class="flex-center flex-column">
-            <h1>Save Score</h1>
+            <h1>High Score</h1>
             <form>
                 <input class="input" type="text" name="username" id="username" placehoder="username" />
                 <button type="submit" class="button" id="saveScoreButton" onclick="saveHighScore(event)">
@@ -21,12 +21,13 @@
                 </button>
             </form>
 
-            <a class="button" href=questions.html>Take Quiz Again</a>
-            <a class="button" href=index.html>Home</a>
+           
 
             <div id="highScores" class="flex-center flex-column">
                 <h1 id="finalScore">High Scores</h1>
                 <ul id="highScoresList"></ul>
+                <a class="button" href=questions.html>Take Quiz Again</a>
+                <a class="button" href=index.html>Home</a>
             </div>
         </div>
     </div>
