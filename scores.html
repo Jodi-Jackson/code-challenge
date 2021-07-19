@@ -6,25 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>High Scores</title>
-    <link rel="stylesheet" href="assets\style.css">
+    <link rel="stylesheet" href="assets\css\style.css">
+    <link rel="stylesheet" href="assets\css\questions.css">
 </head>
 
 <body>
     <div class="container">
         <div id="scores" class="flex-center flex-column">
-            <h1>High Scores</h1>
+            <h1>Save Score</h1>
             <form>
-                <input type="text" name="username" id="username" placehoder="username" />
-                <button type="submit" class="button" id="saveScoreButton" onclick="saveHighScore(event)" disabled>
-
+                <input class="input" type="text" name="username" id="username" placehoder="username" />
+                <button type="submit" class="button" id="saveScoreButton" onclick="saveHighScore(event)">
                     Save
                 </button>
             </form>
+
             <a class="button" href=questions.html>Take Quiz Again</a>
-            <a class="button" href=/scores.html>Home</a>
+            <a class="button" href=index.html>Home</a>
+
+            <div id="highScores" class="flex-center flex-column">
+                <h1 id="finalScore">High Scores</h1>
+                <ul id="highScoresList"></ul>
+            </div>
         </div>
     </div>
-<script src="assets\js\scores.js"></script>
+    <script src="assets\js\scores.js"></script>
 </body>
 
 </html>

@@ -47,6 +47,19 @@ h1 >span{
     color: rgb(50, 158, 50);
     background-color: white;
     margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+    .input {
+        font-size: 1.8rem;
+        padding: 1rem;
+        width: 20rem;
+        text-align: center;
+        border: 0.1rem solid rgb(50, 158, 50);
+        text-decoration: none;
+        color: rgb(50, 158, 50);
+        background-color: white;
+        margin-bottom: 1rem;
    
 }
 
